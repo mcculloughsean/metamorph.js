@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/metamorph.js"></script>
+    <!--metamorph-titlemorph-start-->
+    <title> initial title </title>
+    <!--metamorph-titlemorph-end-->
+  </head>
+  <body>
+    foo bar
+    <script type="text/javascript">
+      $( function () { 
+      foo = Metamorph("Foo bar");
+      $("body").append(foo.outerHTML());
+      $("body").append("<div> test <!--metamorph-foobar-start--> nyah <!--metamorph-foobar-end--> all the things</div>");
+      foo2 = Metamorph();
+      foo2.start = "metamorph-foobar-start";
+      foo2.end = "metamorph-foobar-end";
+      foo2.html("moocow");
+
+
+      titleMorph = Metamorph()
+      titleMorph.start = "metamorph-titlemorph-start";
+      titleMorph.end = "metamorph-titlemorph-end";
+      titleMorph.html("<title>this is the new title</title>");
+    });
+ </script>
+        
+  </body>
+</html>
+
+
